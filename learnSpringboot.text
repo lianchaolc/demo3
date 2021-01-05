@@ -1,0 +1,26 @@
+
+1  GET http://localhost:8888/css/bootstrap-theme.min.css net::ERR_ABORTED
+大坑啊😭
+我在网上试了各种办法，我的就是无法加载静态资源。
+比如，将 < link href=“static/…”> 中的static去掉，或者用thymeleaf模板引擎的话th:href="@{}"与传统的html href语义有冲突。
+我都想项目重写了。生气💢
+解决：
+之前我换过springboot的版本号。
+导致我的静态资源无法加载但却可以通过url直接访问/js/chart.min.js文件内容。
+所以把spring boot版本号换回去就好了。
+教训：
+尽量不要更改你默认创建的版本号，包括thymeleaf，webjars等，除非你牛叉
+
+bootstrap  资源网站
+https://github.com/twbs/bootstrap/releases/download/v4.0.0-alpha.2/bootstrap-4.0.0-alpha.2-dist.zip
+下载Bootstrap
+https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip
+https://github.com/twbs/bootstrap/releases/download/v4.0.0-alpha.2/bootstrap-4.0.0-alpha.2-dist.zip
+安装Bootstrap
+
+https://www.cnblogs.com/shuai1991/p/10884603.html
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
